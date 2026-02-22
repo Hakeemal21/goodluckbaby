@@ -12,31 +12,34 @@ body {
   margin: 0;
   background: #f6f1e8;
   font-family: 'Poppins', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
   color: #0b1f3a;
   text-align: center;
 }
 
-/* MAIN TITLE */
+/* TITLE */
 h1 {
-  margin-top: 40px;
-  font-size: 42px;
+  margin-top: 30px;
+  font-size: 5vw;
   font-weight: 700;
 }
 
 /* POLAROID */
 .polaroid {
   background: white;
-  width: 260px;
+  width: 80%;
+  max-width: 280px;
   padding: 15px 15px 60px 15px;
-  margin: 40px auto;
+  margin: 30px auto;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   transform: rotate(-2deg);
+  position: relative;
+  z-index: 5;
 }
 
 .polaroid img {
   width: 100%;
-  height: 260px;
+  height: auto;
   object-fit: cover;
 }
 
@@ -49,14 +52,16 @@ h1 {
 
 /* FLOATING ELEMENTS */
 .float {
-  position: absolute;
+  position: fixed;
   animation: floatUpDown 4s ease-in-out infinite;
   font-weight: 700;
+  z-index: 1;
+  opacity: 0.9;
 }
 
 @keyframes floatUpDown {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-25px); }
+  50% { transform: translateY(-20px); }
   100% { transform: translateY(0px); }
 }
 
@@ -65,8 +70,22 @@ h1 {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  font-size: 36px;
+  font-size: 32px;
   cursor: pointer;
+  z-index: 10;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 7vw;
+  }
+
+  .caption {
+    font-size: 13px;
+  }
+
 }
 </style>
 </head>
@@ -83,35 +102,25 @@ h1 {
   </div>
 </div>
 
-<!-- 8 <3 -->
-<div class="float" style="top:10%; left:5%; font-size:40px;"><3</div>
-<div class="float" style="top:20%; left:85%; font-size:35px;"><3</div>
-<div class="float" style="top:35%; left:15%; font-size:45px;"><3</div>
-<div class="float" style="top:50%; left:90%; font-size:38px;"><3</div>
-<div class="float" style="top:65%; left:10%; font-size:42px;"><3</div>
-<div class="float" style="top:75%; left:75%; font-size:36px;"><3</div>
-<div class="float" style="top:85%; left:30%; font-size:40px;"><3</div>
-<div class="float" style="top:40%; left:60%; font-size:37px;"><3</div>
+<!-- GOODLUCK TEXT (Spaced cleanly edges only) -->
+<div class="float" style="top:5%; left:5%; font-size:16px;">GOODLUCK BABYYY <3</div>
+<div class="float" style="top:5%; right:5%; font-size:16px;">GOODLUCK BABYYY <3</div>
+<div class="float" style="top:20%; left:3%; font-size:17px;">GOODLUCK BABYYY <3</div>
+<div class="float" style="top:20%; right:3%; font-size:17px;">GOODLUCK BABYYY <3</div>
+<div class="float" style="bottom:20%; left:5%; font-size:16px;">GOODLUCK BABYYY <3</div>
+<div class="float" style="bottom:20%; right:5%; font-size:16px;">GOODLUCK BABYYY <3</div>
+<div class="float" style="bottom:5%; left:8%; font-size:17px;">GOODLUCK BABYYY <3</div>
+<div class="float" style="bottom:5%; right:8%; font-size:17px;">GOODLUCK BABYYY <3</div>
 
-<!-- 8 GOODLUCK BABYYY -->
-<div class="float" style="top:15%; left:40%; font-size:18px;">GOODLUCK BABYYY <3</div>
-<div class="float" style="top:30%; left:70%; font-size:20px;">GOODLUCK BABYYY <3</div>
-<div class="float" style="top:55%; left:50%; font-size:18px;">GOODLUCK BABYYY <3</div>
-<div class="float" style="top:70%; left:25%; font-size:20px;">GOODLUCK BABYYY <3</div>
-<div class="float" style="top:80%; left:60%; font-size:18px;">GOODLUCK BABYYY <3</div>
-<div class="float" style="top:25%; left:20%; font-size:20px;">GOODLUCK BABYYY <3</div>
-<div class="float" style="top:45%; left:80%; font-size:18px;">GOODLUCK BABYYY <3</div>
-<div class="float" style="top:60%; left:5%; font-size:20px;">GOODLUCK BABYYY <3</div>
-
-<!-- 8 Notebook Papers -->
-<div class="float" style="top:18%; left:60%; font-size:28px;">📝</div>
-<div class="float" style="top:33%; left:5%; font-size:30px;">📝</div>
-<div class="float" style="top:48%; left:35%; font-size:28px;">📝</div>
-<div class="float" style="top:62%; left:80%; font-size:30px;">📝</div>
-<div class="float" style="top:78%; left:45%; font-size:28px;">📝</div>
-<div class="float" style="top:85%; left:15%; font-size:30px;">📝</div>
-<div class="float" style="top:40%; left:90%; font-size:28px;">📝</div>
-<div class="float" style="top:12%; left:75%; font-size:30px;">📝</div>
+<!-- NOTEBOOK PAPERS (Balanced corners & sides) -->
+<div class="float" style="top:12%; left:40%; font-size:24px;">📝</div>
+<div class="float" style="top:12%; right:40%; font-size:24px;">📝</div>
+<div class="float" style="top:40%; left:2%; font-size:24px;">📝</div>
+<div class="float" style="top:40%; right:2%; font-size:24px;">📝</div>
+<div class="float" style="bottom:35%; left:3%; font-size:24px;">📝</div>
+<div class="float" style="bottom:35%; right:3%; font-size:24px;">📝</div>
+<div class="float" style="bottom:10%; left:35%; font-size:24px;">📝</div>
+<div class="float" style="bottom:10%; right:35%; font-size:24px;">📝</div>
 
 <div class="music-btn" id="playMusic">&#128189;</div>
 
@@ -127,4 +136,5 @@ document.getElementById("playMusic").addEventListener("click", () => {
 
 </body>
 </html>
+
 
